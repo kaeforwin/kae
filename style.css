@@ -680,5 +680,29 @@ z-index:2;
 overflow:hidden;
 
 }
+ .card-image{
+max-width:85px !important;
+max-height:85px !important;
+width:85px !important;
+height:85px !important;
+object-fit:contain !important;
+display:block !important;
+margin:0 auto 18px auto !important;
+position:relative !important;
+z-index:5 !important;
+}
+
+.main-card{
+overflow:hidden !important;
+align-items:center !important;
+text-align:center !important;
+}
+
+.main-card h2,
+.main-card span,
+.card-name{
+position:relative !important;
+z-index:5 !important;
+}
 }
 }
