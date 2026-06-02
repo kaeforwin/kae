@@ -260,13 +260,19 @@ z-index:5;
 }
 
 .card-one{
-left:15px;
-top:105px;
+left:-10px;
+top:110px;
 }
 
 .card-two{
-left:0;
-bottom:145px;
+left:-20px;
+bottom:120px;
+}
+
+.card-three{
+right:-15px;
+bottom:55px;
+}
 animation-delay:.4s;
 }
 
