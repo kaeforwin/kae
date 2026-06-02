@@ -728,3 +728,55 @@ filter:none !important;
 .main-card{
 overflow:hidden !important;
 }
+.card-image-box{
+width:210px !important;
+height:115px !important;
+border-radius:16px !important;
+overflow:hidden !important;
+margin:0 auto 16px auto !important;
+position:relative !important;
+z-index:5 !important;
+background:#111 !important;
+box-shadow:0 0 22px rgba(255,0,0,.35) !important;
+}
+
+.card-image{
+width:100% !important;
+height:100% !important;
+object-fit:cover !important;
+object-position:center 30% !important;
+display:block !important;
+margin:0 !important;
+}
+
+@media(max-width:950px){
+
+.hero-right{
+height:auto !important;
+margin-top:35px !important;
+}
+
+.main-card{
+width:230px !important;
+height:310px !important;
+margin:0 auto !important;
+transform:rotate(0deg) !important;
+padding:22px !important;
+}
+
+.card-image-box{
+width:170px !important;
+height:95px !important;
+margin-bottom:12px !important;
+}
+
+.main-card h2{
+font-size:48px !important;
+}
+
+.main-card span,
+.card-name{
+font-size:14px !important;
+}
+
+}
