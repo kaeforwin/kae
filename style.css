@@ -705,4 +705,26 @@ position:relative !important;
 z-index:5 !important;
 }
 }
+}.card-image-box{
+width:220px !important;
+height:150px !important;
+border-radius:14px !important;
+overflow:hidden !important;
+margin:0 auto 22px auto !important;
+position:relative !important;
+z-index:5 !important;
+background:#090909 !important;
+}
+
+.card-image{
+width:100% !important;
+height:100% !important;
+object-fit:cover !important;
+display:block !important;
+margin:0 !important;
+filter:none !important;
+}
+
+.main-card{
+overflow:hidden !important;
 }
