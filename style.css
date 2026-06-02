@@ -647,5 +647,13 @@ overflow:hidden;
 }
 
 }
+ .card-name{
+position:relative;
+z-index:3;
+margin-top:12px;
+font-size:22px;
+color:#fff;
+text-shadow:0 0 18px red;
+}
 }
 }
