@@ -1,102 +1,70 @@
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
-html{scroll-behavior:smooth}
-body{background:#050505;color:#fff;overflow-x:hidden}
+.hero{
+position:relative;
+overflow:hidden;
+}
 
-.navbar{
-width:100%;padding:22px 8%;display:flex;justify-content:space-between;align-items:center;
-background:#050505cc;backdrop-filter:blur(15px);position:fixed;top:0;z-index:100;
-border-bottom:1px solid #ff1a1a22
+.hero::after{
+content:"";
+position:absolute;
+right:-250px;
+top:-150px;
+width:900px;
+height:900px;
+background:radial-gradient(circle,#a0000020,#00000000 70%);
+pointer-events:none;
 }
 
 .logo{
-color:#ff1a1a;font-size:34px;font-weight:900;letter-spacing:4px;
-text-shadow:0 0 25px #ff1a1a
+text-shadow:
+0 0 10px red,
+0 0 25px red,
+0 0 50px red;
 }
-
-nav{display:flex;gap:28px}
-nav a{color:#ddd;text-decoration:none;font-weight:600}
-nav a:hover{color:#ff1a1a}
-
-.hero{
-min-height:100vh;padding:130px 8% 70px;display:grid;grid-template-columns:1.2fr .8fr;
-gap:50px;align-items:center;
-background:linear-gradient(to right,#050505 0%,#050505dd 45%,#05050577 100%),
-radial-gradient(circle at 75% 30%,#ff1a1a55,transparent 35%)
-}
-
-.badge{
-display:inline-block;padding:10px 18px;border-radius:50px;background:#ff1a1a22;
-color:#ff4b4b;border:1px solid #ff1a1a66;margin-bottom:25px
-}
-
-.hero h1{
-font-size:clamp(48px,7vw,92px);line-height:.95;font-weight:900;letter-spacing:-2px;
-text-shadow:0 0 35px #ff1a1a55
-}
-
-.hero p{
-margin-top:28px;max-width:650px;color:#d6d6d6;font-size:21px;line-height:1.6
-}
-
-.buttons{display:flex;gap:16px;margin-top:34px;flex-wrap:wrap}
-.btn{padding:16px 28px;border-radius:10px;text-decoration:none;font-weight:900;transition:.3s}
-.btn.red{background:#ff1a1a;color:#fff;box-shadow:0 0 30px #ff1a1a55}
-.btn.dark{background:#151515;color:#fff;border:1px solid #333}
-.btn:hover{transform:translateY(-5px)}
 
 .hero-card{
-background:linear-gradient(145deg,#171717,#080808);border:1px solid #ff1a1a44;
-border-radius:28px;padding:38px;box-shadow:0 0 60px #ff1a1a22;
-animation:float 4s infinite alternate ease-in-out
+width:320px;
+height:420px;
+background:linear-gradient(180deg,#ff1a1a,#330000);
+border-radius:35px;
+padding:30px;
+display:flex;
+justify-content:flex-end;
+flex-direction:column;
+transform:rotate(8deg);
+box-shadow:
+0 0 60px #ff000055,
+0 0 120px #ff000022;
+position:relative;
 }
 
-.hero-card h2{color:#ff1a1a;font-size:82px;margin-bottom:20px}
-.hero-card p{color:#ccc;line-height:1.6}
-
-@keyframes float{
-from{transform:translateY(-15px) rotate(3deg)}
-to{transform:translateY(20px) rotate(-2deg)}
+.hero-card::before{
+content:"Instagram";
+position:absolute;
+left:-110px;
+top:40px;
+padding:20px 28px;
+border-radius:20px;
+background:#111;
+border:1px solid #333;
 }
 
-.stats{
-margin:-40px 8% 0;position:relative;z-index:5;display:grid;
-grid-template-columns:repeat(3,1fr);gap:18px
+.hero-card::after{
+content:"TikTok";
+position:absolute;
+left:-130px;
+bottom:100px;
+padding:20px 28px;
+border-radius:20px;
+background:#111;
+border:1px solid #333;
 }
 
-.stats div{
-background:#111;border:1px solid #ff1a1a33;border-radius:18px;padding:28px;text-align:center
-}
-
-.stats strong{display:block;color:#ff1a1a;font-size:34px}
-.stats span{color:#bbb}
-
-.section{padding:85px 8%}
-.section h2{font-size:42px;margin-bottom:30px}
-
-.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.service-card{
-min-height:230px;background:#111;border:1px solid #ff1a1a33;border-radius:22px;
-padding:28px;transition:.3s;position:relative;overflow:hidden
-}
-
-.service-card:hover{transform:translateY(-10px) scale(1.03);box-shadow:0 0 45px #ff1a1a33}
-.service-card h3{color:#ff1a1a;font-size:28px;margin-bottom:15px}
-.service-card p{color:#ccc;line-height:1.6}
-
-.link-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.link-grid a{
-background:#ff1a1a;color:#fff;padding:24px;text-align:center;border-radius:16px;
-text-decoration:none;font-weight:900;transition:.3s
-}
-.link-grid a:hover{background:#fff;color:#ff1a1a;transform:translateY(-6px)}
-
-footer{padding:35px;text-align:center;color:#777;border-top:1px solid #ff1a1a22}
-
-@media(max-width:900px){
-.navbar{flex-direction:column;gap:15px}
-nav{flex-wrap:wrap;justify-content:center}
-.hero{grid-template-columns:1fr;text-align:center}
-.hero p{margin-left:auto;margin-right:auto}
-.buttons{justify-content:center}
-.stats,.service-grid,.link-grid{grid-template-columns:1fr}
+.social-float{
+position:absolute;
+right:-40px;
+bottom:20px;
+padding:20px 28px;
+background:#111;
+border-radius:20px;
+border:1px solid #333;
 }
