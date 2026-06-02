@@ -691,3 +691,23 @@ height:100% !important;
 object-fit:cover !important;
 object-position:center top !important;
 }
+.final-image-frame{
+width:210px !important;
+height:135px !important;
+overflow:hidden !important;
+border-radius:14px !important;
+margin:0 auto 18px auto !important;
+background:#000 !important;
+position:relative !important;
+z-index:50 !important;
+}
+
+.final-image{
+width:100% !important;
+height:100% !important;
+object-fit:cover !important;
+object-position:center top !important;
+display:block !important;
+position:static !important;
+transform:none !important;
+}
