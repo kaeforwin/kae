@@ -569,5 +569,34 @@ display:none;
 .why,
 .link-grid{
 grid-template-columns:1fr;
+  .cursor-glow{
+
+position:fixed;
+
+width:320px;
+
+height:320px;
+
+border-radius:50%;
+
+pointer-events:none;
+
+background:
+radial-gradient(circle,
+rgba(255,0,0,.28),
+rgba(255,0,0,.12),
+transparent 70%);
+
+filter:blur(35px);
+
+transform:translate(-50%,-50%);
+
+z-index:-1;
+
+transition:
+left .08s linear,
+top .08s linear;
+
+}
 }
 }
