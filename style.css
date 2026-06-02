@@ -677,3 +677,17 @@ display:block !important;
 padding:0 !important;
 margin:0 auto !important;
 }
+.card-image-box{
+width:180px !important;
+height:180px !important;
+overflow:hidden !important;
+border-radius:12px !important;
+margin:0 auto 15px auto !important;
+}
+
+.card-image{
+width:100% !important;
+height:100% !important;
+object-fit:cover !important;
+object-position:center top !important;
+}
