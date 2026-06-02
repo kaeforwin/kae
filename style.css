@@ -200,52 +200,10 @@ flex-direction:column;
 justify-content:flex-end;
 align-items:center;
 text-align:center;
-padding:28px;
+padding:34px;
 transform:rotate(7deg);
 animation:floatMain 4s infinite alternate ease-in-out;
 overflow:hidden;
-}
-
-@keyframes floatMain{
-from{transform:rotate(7deg) translateY(-12px)}
-to{transform:rotate(3deg) translateY(22px)}
-}
-
-.final-image-frame{
-width:260px;
-height:190px;
-overflow:hidden;
-border-radius:18px;
-margin:0 auto 14px auto;
-background:#000;
-position:relative;
-z-index:2;
-}
-
-.final-image{
-width:100%;
-height:100%;
-object-fit:cover;
-object-position:center top;
-display:block;
-}
-
-.main-card h2{
-font-size:58px;
-line-height:.9;
-}
-
-.main-card span{
-font-size:15px;
-}
-}
-
-.final-image{
-width:100%;
-height:100%;
-object-fit:cover;
-object-position:center top;
-display:block;
 }
 
 .main-card h2{
@@ -258,10 +216,9 @@ font-size:18px;
 color:#eee;
 }
 
-.card-name{
-font-size:18px;
-margin-top:8px;
-text-shadow:0 0 18px red;
+@keyframes floatMain{
+from{transform:rotate(7deg) translateY(-12px)}
+to{transform:rotate(3deg) translateY(22px)}
 }
 
 .mini-card{
@@ -278,19 +235,13 @@ z-index:5;
 }
 
 .card-one{
-left:-10px;
-top:110px;
+left:15px;
+top:105px;
 }
 
 .card-two{
-left:-20px;
-bottom:120px;
-}
-
-.card-three{
-right:-15px;
-bottom:55px;
-}
+left:0;
+bottom:145px;
 animation-delay:.4s;
 }
 
@@ -553,7 +504,7 @@ box-shadow:0 0 35px rgba(255,0,0,.35);
 transition:.3s;
 }
 
-.link-grid a:hover{.card-one
+.link-grid a:hover{
 background:white;
 color:#ff1111;
 transform:translateY(-8px);
@@ -570,7 +521,6 @@ background:radial-gradient(circle,rgba(255,0,0,.28),rgba(255,0,0,.12),transparen
 filter:blur(35px);
 transform:translate(-50%,-50%);
 z-index:-1;
-will-change:transform;
 }
 
 footer{
@@ -615,7 +565,7 @@ justify-content:center;
 }
 
 .hero-right{
-height:auto;
+height:420px;
 margin-top:35px;
 position:relative;
 }
@@ -632,19 +582,12 @@ padding:22px;
 animation:none;
 }
 
-.final-image-frame{
-width:190px;
-height:115px;
-margin-bottom:14px;
-}
-
 .main-card h2{
-font-size:48px;
+font-size:58px;
 }
 
-.main-card span,
-.card-name{
-font-size:14px;
+.main-card span{
+font-size:15px;
 }
 
 .mini-card{
@@ -660,15 +603,6 @@ grid-template-columns:1fr;
 
 .section-title h2{
 font-size:34px;
-}
-  .main-card-photo{
-width:280px;
-height:210px;
-object-fit:cover;
-object-position:center top;
-border-radius:18px;
-margin:0 auto 14px auto;
-display:block;
 }
 
 }
