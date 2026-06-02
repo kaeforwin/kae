@@ -653,3 +653,53 @@ object-fit:cover;
 object-position:center top;
 display:block;
 }
+.main-card{
+position:absolute;
+right:60px;
+top:70px;
+width:335px;
+height:440px;
+border-radius:34px;
+background:linear-gradient(160deg,#ff1111,#450000 58%,#120000);
+box-shadow:0 0 70px rgba(255,0,0,.55);
+display:flex;
+flex-direction:column;
+justify-content:flex-end;
+align-items:center;
+text-align:center;
+padding:28px;
+transform:rotate(7deg);
+overflow:hidden;
+}
+
+.final-image-frame{
+width:220px;
+height:140px;
+overflow:hidden;
+border-radius:14px;
+margin:0 auto 18px auto;
+background:#000;
+position:relative;
+z-index:2;
+}
+
+.final-image{
+width:100%;
+height:100%;
+object-fit:cover;
+object-position:center top;
+display:block;
+}
+
+@media(max-width:950px){
+.main-card{
+position:relative;
+right:auto;
+top:auto;
+width:250px;
+height:330px;
+margin:0 auto;
+transform:none;
+padding:22px;
+}
+}
