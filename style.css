@@ -989,3 +989,31 @@ gap:14px;
 padding:80px 7%;
 }
 }
+.market-page{
+min-height:100vh;
+padding:120px 5% 60px;
+display:grid;
+grid-template-columns:260px 1fr;
+gap:24px;
+}
+
+.market-grid{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:18px;
+}
+
+.filter-panel,
+.market-card{
+display:block;
+}
+
+@media(max-width:950px){
+.market-page{
+grid-template-columns:1fr;
+}
+
+.market-grid{
+grid-template-columns:1fr;
+}
+}
