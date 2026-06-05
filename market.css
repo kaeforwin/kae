@@ -62,7 +62,67 @@ color:#ff1111;
 .simple-grid{
 grid-template-columns:1fr;
 }
+.order-page{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:140px 20px;
+}
 
+.order-box{
+width:100%;
+max-width:650px;
+padding:40px;
+border-radius:26px;
+background:linear-gradient(145deg,#141414,#090909);
+border:1px solid rgba(255,0,0,.2);
+box-shadow:0 0 50px rgba(255,0,0,.12);
+}
+
+.order-box h1{
+margin-bottom:30px;
+font-size:42px;
+}
+
+.order-box label{
+display:block;
+margin:20px 0 10px;
+font-weight:900;
+color:#ff4b4b;
+}
+
+.order-box input,
+.order-box select{
+width:100%;
+padding:18px;
+border-radius:14px;
+background:#111;
+border:1px solid rgba(255,255,255,.1);
+color:white;
+}
+
+.price-box{
+margin-top:20px;
+padding:25px;
+border-radius:18px;
+background:#111;
+font-size:32px;
+font-weight:900;
+color:#ffcc4b;
+}
+
+.buy-btn{
+display:block;
+margin-top:30px;
+padding:18px;
+text-align:center;
+border-radius:16px;
+background:#ff1111;
+color:white;
+text-decoration:none;
+font-weight:900;
+}
 .simple-products{
 padding:80px 7%;
 }
