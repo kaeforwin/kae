@@ -1,10 +1,14 @@
+```html
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <link rel="icon" type="image/png" href="favicon.png">
+
+<link rel="icon" type="image/png" href="favicon.png">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TikTok Ürünleri | Kae Aizawa</title>
+
+<title>TikTok Sipariş | Kae Aizawa</title>
 
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="market.css">
@@ -16,69 +20,101 @@
 <div class="bg-glow"></div>
 
 <header class="navbar">
-  <div class="logo">K'</div>
 
-  <nav>
-    <a href="index.html">Ana Sayfa</a>
-    <a href="products.html">Ürünler</a>
-    <a href="payment.html">Ödeme</a>
-  </nav>
+<div class="logo">K'</div>
+
+<nav>
+<a href="index.html">Ana Sayfa</a>
+<a href="products.html">Ürünler</a>
+<a href="payment.html">Ödeme</a>
+</nav>
+
 </header>
 
-<section class="simple-products">
+<section class="order-page">
 
-<div class="section-title">
-<span>TIKTOK</span>
-<h2>TikTok Ürünleri</h2>
+<div class="order-box">
+
+<h1>TikTok Sipariş Sistemi</h1>
+
+<label>Hizmet Türü</label>
+
+<select id="service">
+
+<option value="0.30">Takipçi</option>
+
+<option value="0.05">Beğeni</option>
+
+<option value="0.001">İzlenme</option>
+
+<option value="1.50">Yorum</option>
+
+<option value="0.03">Paylaşım</option>
+
+<option value="0.03">Kaydetme</option>
+
+</select>
+
+<label>Miktar</label>
+
+<input type="text" id="amount" placeholder="1000">
+
+<label>Kullanıcı Adı / Link</label>
+
+<input type="text" placeholder="@kullaniciadi">
+
+<label>Toplam Fiyat</label>
+
+<div class="price-box">
+<span id="price">0 TL</span>
 </div>
 
-<div class="simple-grid">
-
-<div class="simple-card">
-<h3>TikTok Profil Düzenleme</h3>
-<p>Profil görünümü, açıklama ve hesap düzeni.</p>
-<strong>150 TL</strong>
-<a href="payment.html">Satın Al</a>
-</div>
-
-<div class="simple-card">
-<h3>TikTok İçerik Planı</h3>
-<p>İçerik fikirleri ve paylaşım planı.</p>
-<strong>250 TL</strong>
-<a href="payment.html">Satın Al</a>
-</div>
-
-<div class="simple-card">
-<h3>TikTok Hesap Analizi</h3>
-<p>Profil ve içerik inceleme desteği.</p>
-<strong>200 TL</strong>
-<a href="payment.html">Satın Al</a>
-</div>
-
-<div class="simple-card">
-<h3>TikTok Video Fikirleri</h3>
-<p>Trend odaklı video fikir desteği.</p>
-<strong>180 TL</strong>
-<a href="payment.html">Satın Al</a>
-</div>
-
-<div class="simple-card">
-<h3>TikTok Danışmanlık</h3>
-<p>Hesap gelişimi ve içerik danışmanlığı.</p>
-<strong>500 TL</strong>
-<a href="payment.html">Satın Al</a>
-</div>
-
-<div class="simple-card">
-<h3>TikTok Full Paket</h3>
-<p>Profil + içerik + danışmanlık paketi.</p>
-<strong>900 TL</strong>
-<a href="payment.html">Satın Al</a>
-</div>
+<a href="SHOPIER_LINKIN" class="buy-btn">
+Ödemeye Geç
+</a>
 
 </div>
 
 </section>
 
+<script>
+
+const service =
+document.getElementById("service");
+
+const amount =
+document.getElementById("amount");
+
+const price =
+document.getElementById("price");
+
+function calculate(){
+
+let cleanAmount =
+amount.value.replace(/\./g,'');
+
+let total =
+(Number(service.value) * Number(cleanAmount || 0));
+
+price.innerText =
+total.toFixed(2) + " TL";
+
+}
+
+service.addEventListener(
+"change",
+calculate
+);
+
+amount.addEventListener(
+"input",
+calculate
+);
+
+calculate();
+
+</script>
+
 </body>
 </html>
+```
