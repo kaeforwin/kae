@@ -1,10 +1,14 @@
+```html
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <link rel="icon" type="image/png" href="favicon.png">
+
+<link rel="icon" type="image/png" href="favicon.png">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YouTube Ürünleri | Kae Aizawa</title>
+
+<title>YouTube Sipariş | Kae Aizawa</title>
 
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="market.css">
@@ -16,83 +20,97 @@
 <div class="bg-glow"></div>
 
 <header class="navbar">
-  <div class="logo">K'</div>
 
-  <nav>
-    <a href="index.html">Ana Sayfa</a>
-    <a href="products.html">Ürünler</a>
-    <a href="payment.html">Ödeme</a>
-  </nav>
+<div class="logo">K'</div>
+
+<nav>
+<a href="index.html">Ana Sayfa</a>
+<a href="products.html">Ürünler</a>
+<a href="payment.html">Ödeme</a>
+</nav>
+
 </header>
 
-<section class="simple-products">
+<section class="order-page">
 
-<div class="section-title">
-<span>YOUTUBE</span>
-<h2>YouTube Ürünleri</h2>
+<div class="order-box">
+
+<h1>YouTube Sipariş Sistemi</h1>
+
+<label>Hizmet Türü</label>
+
+<select id="service">
+
+<option value="25">Abone</option>
+
+<option value="0.50">Beğeni</option>
+
+<option value="0.10">İzlenme</option>
+
+<option value="2.50">Yorum</option>
+
+</select>
+
+<label>Miktar</label>
+
+<input type="text" id="amount" placeholder="1000">
+
+<label>Kanal Linki / Video Linki</label>
+
+<input type="text" placeholder="youtube.com/...">
+
+<label>Toplam Fiyat</label>
+
+<div class="price-box">
+<span id="price">0 TL</span>
 </div>
 
-<div class="simple-grid">
-
-<div class="simple-card">
-<h3>YouTube Kanal Düzenleme</h3>
-<p>Kanal görünümü, banner ve profil düzenleme.</p>
-<strong>200 TL</strong>
-<a href="payment.html">Satın Al</a>
-</div>
-
-<div class="simple-card">
-<h3>Video Fikir Paketi</h3>
-<p>İçerik fikirleri ve paylaşım planlaması.</p>
-<strong>250 TL</strong>
-<a href="payment.html">Satın Al</a>
-</div>
-
-<div class="simple-card">
-<h3>Kanal Analizi</h3>
-<p>Kanal performansı ve içerik değerlendirmesi.</p>
-<strong>300 TL</strong>
-<a href="payment.html">Satın Al</a>
-</div>
-
-<div class="simple-card">
-<h3>Küçük Resim Danışmanlığı</h3>
-<p>Thumbnail görünümü ve dikkat çekme önerileri.</p>
-<strong>180 TL</strong>
-<a href="payment.html">Satın Al</a>
-</div>
-
-<div class="simple-card">
-<h3>İçerik Planı</h3>
-<p>Uzun dönem video planlaması desteği.</p>
-<strong>350 TL</strong>
-<a href="payment.html">Satın Al</a>
-</div>
-
-<div class="simple-card">
-<h3>YouTube Danışmanlık</h3>
-<p>Kanal gelişimi ve strateji desteği.</p>
-<strong>500 TL</strong>
-<a href="payment.html">Satın Al</a>
-</div>
-
-<div class="simple-card">
-<h3>Shorts Paket</h3>
-<p>Shorts içerik önerileri ve yapılandırma.</p>
-<strong>220 TL</strong>
-<a href="payment.html">Satın Al</a>
-</div>
-
-<div class="simple-card">
-<h3>YouTube Full Paket</h3>
-<p>Kanal + içerik + danışmanlık birlikte.</p>
-<strong>1000 TL</strong>
-<a href="payment.html">Satın Al</a>
-</div>
+<a href="SHOPIER_LINKIN" class="buy-btn">
+Ödemeye Geç
+</a>
 
 </div>
 
 </section>
 
+<script>
+
+const service =
+document.getElementById("service");
+
+const amount =
+document.getElementById("amount");
+
+const price =
+document.getElementById("price");
+
+function calculate(){
+
+let cleanAmount =
+amount.value.replace(/\./g,'');
+
+let total =
+(Number(service.value) * Number(cleanAmount || 0));
+
+price.innerText =
+total.toFixed(2) + " TL";
+
+}
+
+service.addEventListener(
+"change",
+calculate
+);
+
+amount.addEventListener(
+"input",
+calculate
+);
+
+calculate();
+
+</script>
+
 </body>
 </html>
+```
