@@ -39,12 +39,10 @@
 <label>Hizmet Türü</label>
 
 <select id="service">
-
 <option value="0.03">Takipçi</option>
 <option value="0.02">Beğeni</option>
 <option value="0.04">İzlenme</option>
 <option value="0.08">Yorum</option>
-
 </select>
 
 <label>Miktar</label>
@@ -58,9 +56,7 @@
 <label>Toplam Fiyat</label>
 
 <div class="price-box">
-
 <span id="price">0 TL</span>
-
 </div>
 
 <a href="SHOPIER_LINKIN" class="buy-btn">
@@ -85,7 +81,7 @@ document.getElementById("price");
 function calculate(){
 
 let total =
-(service.value * amount.value);
+(Number(service.value) * Number(amount.value || 0));
 
 price.innerText =
 total.toFixed(2) + " TL";
@@ -101,6 +97,8 @@ amount.addEventListener(
 "input",
 calculate
 );
+
+calculate();
 
 </script>
 
