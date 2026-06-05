@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <link rel="icon" type="image/png" href="favicon.png">
+
+<link rel="icon" type="image/png" href="favicon.png">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Instagram Ürünleri | Kae Aizawa</title>
+
+<title>Instagram Sipariş | Kae Aizawa</title>
+
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="market.css">
+
 </head>
 
 <body>
@@ -13,85 +19,90 @@
 <div class="bg-glow"></div>
 
 <header class="navbar">
-  <div class="logo">K'</div>
 
-  <nav>
-    <a href="index.html">Ana Sayfa</a>
-    <a href="products.html">Ürünler</a>
-    <a href="payment.html">Ödeme</a>
-  </nav>
+<div class="logo">K'</div>
+
+<nav>
+<a href="index.html">Ana Sayfa</a>
+<a href="products.html">Ürünler</a>
+<a href="payment.html">Ödeme</a>
+</nav>
+
 </header>
 
-<section class="simple-products">
+<section class="order-page">
 
-  <div class="section-title">
-    <span>INSTAGRAM</span>
-    <h2>Instagram Hizmetleri</h2>
-  </div>
+<div class="order-box">
 
-  <div class="simple-grid">
+<h1>Instagram Sipariş Sistemi</h1>
 
-    <div class="simple-card">
-      <h3>Instagram Takipçi</h3>
-      <p>1000 Garantili takipçi</p>
-      <strong>60₺</strong>
-      <a href="payment.html">Satın Al</a>
-    </div>
+<label>Hizmet Türü</label>
 
-    <div class="simple-card">
-      <h3>Instagram Beğeni</h3>
-      <p>5000 Garantili beğeni</p>
-      <strong>45₺</strong>
-      <a href="payment.html">Satın Al</a>
-    </div>
+<select id="service">
 
-    <div class="simple-card">
-      <h3>Instagram İzlenme</h3>
-      <p>100000 Garantili izlenme</p>
-      <strong>30₺</strong>
-      <a href="payment.html">Satın Al</a>
-    </div>
+<option value="0.03">Takipçi</option>
+<option value="0.02">Beğeni</option>
+<option value="0.04">İzlenme</option>
+<option value="0.08">Yorum</option>
 
-    <div class="simple-card">
-      <h3>Instagram Yorum</h3>
-      <p>100 Garantili yorum</p>
-      <strong>249₺</strong>
-      <a href="payment.html">Satın Al</a>
-    </div>
+</select>
 
-    <div class="simple-card">
-      <h3>Instagram Paket 1</h3>
-      <p>İçerik: 25.000 İzlenme 250 Türk Beğeni 100 Kaydetme 50 Paylaşım</p>
-      <strong>250₺</strong>
-      <a href="payment.html">Satın Al</a>
-    </div>
+<label>Miktar</label>
 
-    <div class="simple-card">
-      <h3>Instagram Paket 2</h3>
-      <p>İçerik: 100.000 İzlenme 1000 Türk Beğeni 500 Kaydetme 120 Paylaşım</p>
-      <strong>400₺</strong>
-      <a href="payment.html">Satın Al</a>
-    </div>
+<input type="number" id="amount" placeholder="1000">
 
-    <div class="simple-card">
-      <h3>Instagram Paket 3</h3>
-      <p>İçerik: 450.000 İzlenme 6500 Beğeni 500 Kaydetme 500 Paylaşım</p>
-      <strong>550₺</strong>
-      <a href="payment.html">Satın Al</a>
-    </div>
+<label>Kullanıcı Adı / Link</label>
 
-    <div class="simple-card">
-      <h3>Instagram Paket 4</h3>
-      <p>İçerik: 1.000.000 İzlenme 24000 Beğeni 2000 Kaydetme 2000 Paylaşım</p>
-      <strong>750₺</strong>
-      <a href="payment.html">Satın Al</a>
-    </div>
-    
-    </div>
+<input type="text" placeholder="@kullaniciadi">
 
-  </div>
+<label>Toplam Fiyat</label>
+
+<div class="price-box">
+
+<span id="price">0 TL</span>
+
+</div>
+
+<a href="SHOPIER_LINKIN" class="buy-btn">
+Ödemeye Geç
+</a>
+
+</div>
 
 </section>
+
+<script>
+
+const service =
+document.getElementById("service");
+
+const amount =
+document.getElementById("amount");
+
+const price =
+document.getElementById("price");
+
+function calculate(){
+
+let total =
+(service.value * amount.value);
+
+price.innerText =
+total.toFixed(2) + " TL";
+
+}
+
+service.addEventListener(
+"change",
+calculate
+);
+
+amount.addEventListener(
+"input",
+calculate
+);
+
+</script>
 
 </body>
 </html>
