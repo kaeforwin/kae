@@ -80,8 +80,11 @@ document.getElementById("price");
 
 function calculate(){
 
+let cleanAmount =
+amount.value.replace(/\./g,'');
+
 let total =
-(Number(service.value) * Number(amount.value || 0));
+(Number(service.value) * Number(cleanAmount || 0));
 
 price.innerText =
 total.toFixed(2) + " TL";
