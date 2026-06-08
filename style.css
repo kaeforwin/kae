@@ -1302,3 +1302,32 @@ transform:none !important;
 }
 
 }
+.marquee div{
+width:max-content !important;
+min-width:200% !important;
+animation:marqueeMobile 22s linear infinite !important;
+}
+
+.marquee span{
+white-space:nowrap !important;
+}
+
+@keyframes marqueeMobile{
+from{
+transform:translateX(0);
+}
+
+to{
+transform:translateX(-50%);
+}
+}
+
+@media(max-width:950px){
+
+.marquee div{
+gap:45px !important;
+min-width:300% !important;
+animation-duration:28s !important;
+}
+
+}
