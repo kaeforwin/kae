@@ -1181,3 +1181,36 @@ grid-template-columns:1fr;
 padding:80px 7%;
 }
 }
+@media(max-width:950px){
+
+.hero-right{
+height:430px;
+}
+
+.main-card{
+animation:floatMain 4s infinite alternate ease-in-out;
+}
+
+.mini-card{
+display:block;
+position:absolute;
+padding:14px 20px;
+font-size:14px;
+}
+
+.card-one{
+left:20px;
+top:30px;
+}
+
+.card-two{
+left:10px;
+bottom:95px;
+}
+
+.card-three{
+right:10px;
+bottom:45px;
+}
+
+}
