@@ -205,7 +205,21 @@ transform:rotate(7deg);
 animation:floatMain 4s infinite alternate ease-in-out;
 overflow:hidden;
 }
+.card-image{
 
+width:220px;
+
+height:220px;
+
+object-fit:contain;
+
+display:block;
+
+margin:auto;
+
+margin-top:20px;
+
+}
 .main-card h2{
 font-size:78px;
 font-weight:900;
