@@ -1,18 +1,12 @@
-```html
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-
 <link rel="icon" type="image/png" href="favicon.png">
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>TikTok Sipariş | Kae Aizawa</title>
-
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="market.css">
-
 </head>
 
 <body>
@@ -20,105 +14,77 @@
 <div class="bg-glow"></div>
 
 <header class="navbar">
-
-<div class="logo">K'</div>
+<a href="index.html" class="logo">K'</a>
 
 <nav>
 <a href="index.html">Ana Sayfa</a>
-<a href="products.html"></a>
-<a href="payment.html"></a>
+<a href="products.html">Ürünler</a>
+<a href="payment.html">Ödeme</a>
 </nav>
-
 </header>
 
 <section class="order-page">
-
 <div class="order-box">
 
-<a href="products.html" class="back-btn">
-Geri
-</a>
+<a href="products.html" class="back-btn">Geri</a>
 
 <h1>TikTok Sipariş Sistemi</h1>
 
 <label>Hizmet Türü</label>
-
 <select id="service">
-
 <option value="0.30">Takipçi</option>
-
 <option value="0.05">Beğeni</option>
-
 <option value="0.001">İzlenme</option>
-
 <option value="1.50">Yorum</option>
-
 <option value="0.03">Paylaşım</option>
-
 <option value="0.03">Kaydetme</option>
-
 </select>
 
 <label>Miktar</label>
-
 <input type="text" id="amount" placeholder="1000">
 
-<label>Kullanıcı Adı / Link</label>
+<label>Kullanıcı Adı</label>
+<input type="text" id="username" placeholder="@kullaniciadi">
 
-<input type="text" placeholder="@kullaniciadi">
+<div id="linkBox" style="display:none;">
+<label>Video Linki</label>
+<input type="text" id="postLink" placeholder="https://www.tiktok.com/@.../video/...">
+</div>
 
 <label>Toplam Fiyat</label>
-
 <div class="price-box">
 <span id="price">0 TL</span>
 </div>
 
-<a href="SHOPIER_LINKIN" class="buy-btn">
-Ödemeye Geç
-</a>
+<a href="SHOPIER_LINKIN" class="buy-btn">Ödemeye Geç</a>
 
 </div>
-
 </section>
 
 <script>
-
-const service =
-document.getElementById("service");
-
-const amount =
-document.getElementById("amount");
-
-const price =
-document.getElementById("price");
+const service = document.getElementById("service");
+const amount = document.getElementById("amount");
+const price = document.getElementById("price");
+const linkBox = document.getElementById("linkBox");
 
 function calculate(){
+let cleanAmount = amount.value.replace(/\./g,'');
+let total = Number(service.value) * Number(cleanAmount || 0);
+price.innerText = total.toFixed(2) + " TL";
 
-let cleanAmount =
-amount.value.replace(/\./g,'');
+let selectedText = service.options[service.selectedIndex].text;
 
-let total =
-(Number(service.value) * Number(cleanAmount || 0));
-
-price.innerText =
-total.toFixed(2) + " TL";
-
+if(selectedText === "Takipçi"){
+linkBox.style.display = "none";
+}else{
+linkBox.style.display = "block";
+}
 }
 
-service.addEventListener(
-"change",
-calculate
-);
-
-amount.addEventListener(
-"input",
-calculate
-);
-
+service.addEventListener("change", calculate);
+amount.addEventListener("input", calculate);
 calculate();
-
 </script>
 
 </body>
 </html>
-```
