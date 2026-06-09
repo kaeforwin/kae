@@ -1,0 +1,247 @@
+```html
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+
+<link rel="icon" type="image/png" href="favicon.png">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sipariş Oluştur | Kae</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="market.css">
+
+</head>
+
+<body>
+
+<div class="bg-glow"></div>
+
+<header class="navbar">
+
+<a href="index.html" class="logo">K'</a>
+
+<nav>
+<a href="index.html">Ana Sayfa</a>
+<a href="products.html">Ürünler</a>
+</nav>
+
+</header>
+
+<section class="order-page">
+
+<div class="order-box">
+
+<a href="products.html" class="back-btn">
+← Geri
+</a>
+
+<h1>Sipariş Oluştur</h1>
+
+<label>Platform</label>
+
+<select id="platform">
+
+<option value="instagram">Instagram</option>
+
+<option value="tiktok">TikTok</option>
+
+<option value="youtube">YouTube</option>
+
+</select>
+
+<label>Hizmet Türü</label>
+
+<select id="service"></select>
+
+<div id="usernameBox">
+
+<label>Kullanıcı Adı / Kanal</label>
+
+<input type="text" placeholder="@kullaniciadi">
+
+</div>
+
+<div id="linkBox" style="display:none;">
+
+<label>Gönderi / Video Linki</label>
+
+<input type="text" placeholder="https://...">
+
+</div>
+
+<label>Miktar</label>
+
+<input type="text" id="amount" placeholder="1000">
+
+<label>Toplam Fiyat</label>
+
+<div class="price-box">
+
+<span id="price">0 TL</span>
+
+</div>
+
+<a href="SHOPIER_LINKIN" class="buy-btn">
+
+Ödemeye Geç
+
+</a>
+
+</div>
+
+</section>
+
+<script>
+
+const platform =
+document.getElementById("platform");
+
+const service =
+document.getElementById("service");
+
+const amount =
+document.getElementById("amount");
+
+const price =
+document.getElementById("price");
+
+const usernameBox =
+document.getElementById("usernameBox");
+
+const linkBox =
+document.getElementById("linkBox");
+
+const services = {
+
+instagram:{
+
+Takipçi:0.03,
+
+Beğeni:0.02,
+
+İzlenme:0.04,
+
+Yorum:0.08
+
+},
+
+tiktok:{
+
+Takipçi:0.30,
+
+Beğeni:0.05,
+
+İzlenme:0.001,
+
+Yorum:1.50,
+
+Paylaşım:0.03,
+
+Kaydetme:0.03
+
+},
+
+youtube:{
+
+Abone:25,
+
+Beğeni:0.50,
+
+İzlenme:0.10,
+
+Yorum:2.50
+
+}
+
+};
+
+function loadServices(){
+
+service.innerHTML = "";
+
+for(let item in services[platform.value]){
+
+let option =
+document.createElement("option");
+
+option.text = item;
+
+option.value =
+services[platform.value][item];
+
+service.add(option);
+
+}
+
+updateFields();
+
+calculate();
+
+}
+
+function updateFields(){
+
+let selected =
+service.options[service.selectedIndex].text;
+
+if(
+selected === "Takipçi" ||
+selected === "Abone"
+){
+
+usernameBox.style.display = "block";
+linkBox.style.display = "none";
+
+}else{
+
+usernameBox.style.display = "none";
+linkBox.style.display = "block";
+
+}
+
+}
+
+function calculate(){
+
+let cleanAmount =
+amount.value.replace(/\./g,'');
+
+let total =
+Number(service.value) *
+Number(cleanAmount || 0);
+
+price.innerText =
+total.toFixed(2) + " TL";
+
+}
+
+platform.addEventListener(
+"change",
+loadServices
+);
+
+service.addEventListener(
+"change",
+updateFields
+);
+
+service.addEventListener(
+"change",
+calculate
+);
+
+amount.addEventListener(
+"input",
+calculate
+);
+
+loadServices();
+
+</script>
+
+</body>
+</html>
+```
