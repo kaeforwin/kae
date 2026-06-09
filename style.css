@@ -59,12 +59,8 @@ border-bottom:1px solid rgba(255,0,0,.18);
 }
 
 .logo{
-font-size:40px;
-font-weight:900;
-letter-spacing:5px;
-color:#ff1a1a;
-text-shadow:0 0 10px #ff0000,0 0 30px #ff0000,0 0 70px #ff0000;
-animation:logoGlow 2s infinite alternate;
+color:#ffffff;
+text-shadow:0 0 10px #ffffff,0 0 30px #ffffff,0 0 70px #ffffff;
 }
 
 @keyframes logoGlow{
