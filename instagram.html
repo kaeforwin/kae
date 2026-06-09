@@ -20,12 +20,12 @@
 
 <header class="navbar">
 
-<div class="logo">K'</div>
+<a href="index.html" class="logo">K'</a>
 
 <nav>
 <a href="index.html">Ana Sayfa</a>
-<a href="products.html"></a>
-<a href="payment.html"></a>
+<a href="products.html">Ürünler</a>
+<a href="payment.html">Ödeme</a>
 </nav>
 
 </header>
@@ -34,9 +34,7 @@
 
 <div class="order-box">
 
-<a href="products.html" class="back-btn">
-Geri
-</a>
+<a href="products.html" class="back-btn">Geri</a>
 
 <h1>Instagram Sipariş Sistemi</h1>
 
@@ -53,9 +51,17 @@ Geri
 
 <input type="text" id="amount" placeholder="1000">
 
-<label>Kullanıcı Adı / Link</label>
+<label>Kullanıcı Adı</label>
 
-<input type="text" placeholder="@kullaniciadi">
+<input type="text" id="username" placeholder="@kullaniciadi">
+
+<div id="linkBox" style="display:none;">
+
+<label>Gönderi / Reels Linki</label>
+
+<input type="text" id="postLink" placeholder="https://instagram.com/p/...">
+
+</div>
 
 <label>Toplam Fiyat</label>
 
@@ -73,37 +79,31 @@ Geri
 
 <script>
 
-const service =
-document.getElementById("service");
-
-const amount =
-document.getElementById("amount");
-
-const price =
-document.getElementById("price");
+const service = document.getElementById("service");
+const amount = document.getElementById("amount");
+const price = document.getElementById("price");
+const linkBox = document.getElementById("linkBox");
 
 function calculate(){
 
-let cleanAmount =
-amount.value.replace(/\./g,'');
+let cleanAmount = amount.value.replace(/\./g,'');
 
-let total =
-(Number(service.value) * Number(cleanAmount || 0));
+let total = Number(service.value) * Number(cleanAmount || 0);
 
-price.innerText =
-total.toFixed(2) + " TL";
+price.innerText = total.toFixed(2) + " TL";
+
+let selectedText = service.options[service.selectedIndex].text;
+
+if(selectedText === "Takipçi"){
+linkBox.style.display = "none";
+}else{
+linkBox.style.display = "block";
+}
 
 }
 
-service.addEventListener(
-"change",
-calculate
-);
-
-amount.addEventListener(
-"input",
-calculate
-);
+service.addEventListener("change", calculate);
+amount.addEventListener("input", calculate);
 
 calculate();
 
