@@ -161,9 +161,9 @@ transition:.3s;
 }
 
 .btn.red{
-background:#ff1111;
-color:white;
-box-shadow:0 0 35px rgba(255,0,0,.55);
+background:#ffffff;
+color:#000000;
+}
 }
 
 .btn.dark{
